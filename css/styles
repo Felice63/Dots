@@ -1,0 +1,47 @@
+/* 
+Universal selector only selects 'real' elements and does not select pseudo elements, so *:before, *:after provides a way to apply universal styling to pseudo elements as well.
+
+NOTE: that single colon signifies pseudo elements, whereas double colon specifies pseudo classes.
+
+Having said that, you typically only really need the single wild card '*'.
+*/
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 130%;
+	line-height: 150%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+.stage {
+	background-color: #ccc;
+	width: 100vw;
+	height: 100vh;
+}
+
+.dot {
+	width: 5em;
+	height: 5em;
+	border-radius: 50%;
+	position: fixed;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1200px) {
+	/* content */
+}
