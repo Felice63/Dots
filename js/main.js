@@ -16,8 +16,16 @@ function addADot(event) {
 	el.style.top = `${event.clientY}px`;
 
 	// SEE: https://www.educative.io/answers/how-to-generate-a-random-color-in-javascript
-	// the radix '16' generates a hexadecimal number
+	
+	// the number 16777215 is 256 cubed, which is the total number of possible colors available in hex / RGB --> 256 per colour channel, hence 256 R x 256 G  x 256 B == 16777215 possible colours.
+
+	// excluding 0, 255 R is the ff in hexadecimal, likewise for the green and blue channels
+
+	// so the 16,777,215th colour is ffffff --> white
+
+	// the radix '16' in the toString() method generates a hexadecimal number
 	// if the radix is '2' then a binary number is generated
+
 	let randomColor = Math.floor(Math.random()*16777215).toString(16);
 	el.style.backgroundColor = `#${randomColor}`;
 
@@ -39,15 +47,4 @@ function addADot(event) {
 }
 
 document.addEventListener('click', addADot);
-
-
-/* 1] Insert the dot at the point (left/top) you clicked, not randomly. 
-
-- Will need to track the pointer position and get its coordinates. 
-- This is dot with event.clientX and event.clientY
-- clientX and clientY are properties if the event object, tracing the location of the mouse (pointer event) onMouseClick
-- SEE:https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_event_mouse_clientxy
-
-*/
-
 
