@@ -12,9 +12,15 @@ function addADot(event) {
 	el.classList.add('dot')
 
 	// Place dot at mouse click location
+	// Track the pointer position and get its coordinates. 
+	// This is done with event.clientX and event.clientY
+	// clientX and clientY are properties if the event object, tracing the location of the mouse (pointer event) onMouseClick
+	//	SEE:https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_event_mouse_clientxy
+
 	el.style.left = `${event.clientX}px`;
 	el.style.top = `${event.clientY}px`;
 
+	// generate a random colour
 	// SEE: https://www.educative.io/answers/how-to-generate-a-random-color-in-javascript
 	
 	// the number 16777215 is 256 cubed, which is the total number of possible colors available in hex / RGB --> 256 per colour channel, hence 256 R x 256 G  x 256 B == 16777215 possible colours.
@@ -46,5 +52,6 @@ function addADot(event) {
 
 }
 
-document.addEventListener('click', addADot);
+// Add an event listener to register the click and fire the addADot function
 
+document.addEventListener('click', addADot);
